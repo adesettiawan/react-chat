@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-container {
+    @apply flex flex-col bg-gray-100 h-[90vh] shadow-xl border relative;
+}
