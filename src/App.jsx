@@ -1,16 +1,17 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 
-import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Chat from "./components/chat/Chat";
+import { auth } from "./firebase";
 
 function App() {
     const [user] = useAuthState(auth);
-    console.log(user);
     return (
         <div className={style.appContainer}>
             <section className={style.sectionContainer}>
                 <Navbar />
+                {user ? <Chat /> : null}
             </section>
         </div>
     );

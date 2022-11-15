@@ -1,13 +1,15 @@
 import React from "react";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import SignInGoogle from "../button/SignInGoogle";
+import LogOutGoogle from "../button/LogOutGoogle";
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-
     return (
         <div className={style.navBar}>
-            <h1 className={style.heading}>My Chat App</h1>
+            <h1 className={style.heading}>My Chat</h1>
+            {!user ? <SignInGoogle /> : <LogOutGoogle />}
         </div>
     );
 };
