@@ -8,7 +8,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     return (
         <div className={style.navBar}>
-            <h1 className={style.heading}>My Chat</h1>
+            <h1 className={style.heading}>My Chats</h1>
             {!user ? <SignInGoogle /> : <LogOutGoogle />}
         </div>
     );
